@@ -1,6 +1,8 @@
 import streamlit as st
 import numpy as np
 import joblib
+from flask import flask 
+app = Flask(__name__)
 model = joblib.load("models/fraud_model.pkl")
 scaler = joblib.load("models/scaler.pkl")
 transaction_id = st.text_input("Transaction ID")
@@ -38,7 +40,7 @@ if st.button("🔍 Check Transaction"):
     if transaction_id == "":
         st.warning("Please enter Transaction ID")
 
-    else:
+     app.run(debug=True)
 
         input_data = np.array([
             [time, amount, feature1, feature2]
