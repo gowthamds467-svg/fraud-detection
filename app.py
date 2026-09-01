@@ -4,6 +4,10 @@ import joblib
 model = joblib.load("models/fraud_model.pkl")
 scaler = joblib.load("models/scaler.pkl")
 transaction_id = st.text_input("Transaction ID")
+st.set_page_config(
+    page_title="Fraud Detection Dashboard",
+    layout="wide"
+)
 st.tittle("Fraud Detection Dashboard")
 st.write("Welcome to the Fraud Detection Dashboard")
 
